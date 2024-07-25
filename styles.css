@@ -1,0 +1,105 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+  margin: 0;
+}
+
+.container {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #ff9900;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #0e0e0e;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  z-index: 2;
+  border: 10px solid #fff;
+  outline: none;
+}
+
+.pie {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  transform: scale(0);
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+.container:hover .pie,
+.container:focus-within .pie {
+  transform: scale(2);
+}
+
+.slice {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  background-color: transparent;
+  overflow: hidden;
+  clip-path: polygon(0% 0%, 99% 0%, 99% 99%, 0% 99%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform-origin: 100% 100%;
+  transition: background-color 0.3s ease;
+}
+
+.slice1 {
+  background-color: #cec17a;
+  transform: rotate(0deg);
+}
+.slice2 {
+  background-color: #cec17a;
+  transform: rotate(90deg);
+}
+.slice3 {
+  background-color: #cec17a;
+  transform: rotate(180deg);
+}
+.slice4 {
+  background-color: #cec17a;
+  transform: rotate(270deg);
+}
+
+.slice1:hover {
+  background-color: #09d14c;
+}
+.slice2:hover {
+  background-color: #a5e907;
+}
+.slice3:hover {
+  background-color: #a210f7;
+}
+.slice4:hover {
+  background-color: #ff001e;
+}
+
+.slice span {
+  transform: rotate(-50deg);
+  position: absolute;
+  top: 40%;
+  left: 20%;
+  color: rgb(11, 11, 11);
+  text-align: center;
+  font-size: 8px;
+}
